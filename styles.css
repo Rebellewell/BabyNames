@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightgray;
+}
+
+h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+#introduction {
+  display:flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  justify-content: center;
+}
+
+#the-facts {
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  justify-content: center;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.boy-name {
+  display: flex;
+  color: cornflowerblue;
+  margin-right: 10px;
+}
+
+.girl-name {
+  display: flex;
+  color: magenta;
+  margin-left: 10px;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+#generate-name {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 24px;
+  border-radius: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
