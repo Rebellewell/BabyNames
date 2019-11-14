@@ -1,3 +1,6 @@
+var generateBtn = document.getElementById('generate-name');
+var newNameContainer = document.getElementById('display-name');
+
 function randBabyName(arr, filter) {
   var randName = getRandName(arr);
   while (randName === filter) {
@@ -33,10 +36,7 @@ function getRandNum(min,max) {
   return Math.floor(Math.random() * (max + 1 - min) + min);
 }
 
-var genButton = document.getElementById('generate-name');
-
-
-genButton.addEventListener('click', genBtnHandler);
+generateBtn.addEventListener('click', genBtnHandler);
 
 // on event, get gender, get full name for gender, display full name to dom
 function genBtnHandler() {
@@ -58,4 +58,6 @@ function getGender() {
 // display name on DOM
 function returnName () {
   var display = document.createElement('string');
+  display.innerText = getRandName();
+  newNameContainer.appendChild(display);
 }
