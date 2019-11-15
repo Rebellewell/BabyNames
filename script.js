@@ -15,9 +15,17 @@ function getRandName(gender) {
   if(gender === 'boy'){
     var firstName = getRandEl(boyNames);
     var middleName = randFilteredElem(boyNames, firstName);
-    var lastName = document.getElementById('last-name');
+    var lastName = document.getElementById('last-name').value;
+  } else if (gender === 'girl') {
+    var firstName = getRandEl(girlNames);
+    var middleName = randFilteredElem(girlNames, firstName);
+    var lastName = document.getElementById('last-name').value;
   }
   return firstName + ' ' + middleName + ' ' + lastName;
+}
+ 
+function getRandEl(arr) {
+  return arr[getRandNum(0, arr.length - 1)];
 }
 
 function randFilteredElem(arr, filter) {
@@ -28,10 +36,6 @@ function randFilteredElem(arr, filter) {
   return randEl;
 }
 
-function getRandEl(arr) {
-  return arr[getRandNum(0, arr.length - 1)];
-}
-
 function getRandNum(min,max) {
   return Math.floor(Math.random() * (max + 1 - min) + min);
 }
@@ -40,9 +44,10 @@ generateBtn.addEventListener('click', genBtnHandler);
 
 // on event, get gender, get full name for gender, display full name to dom
 function genBtnHandler() {
+  newNameContainer.innerHTML = '';
   var gender = getGender();
   var name = getRandName(gender);
-  var displayName = returnName(name);
+  displayName(name);
 } 
 
 // easily and clearly grab the gender, according to DOM
@@ -56,8 +61,8 @@ function getGender() {
 }
 
 // display name on DOM
-function returnName () {
-  var display = document.createElement('string');
-  display.innerText = getRandName();
+function displayName (name) {
+  var display = document.createElement('h3');
+  display.innerText = name;
   newNameContainer.appendChild(display);
 }
